@@ -2,6 +2,9 @@ pandas
 notebook
 numpy
 scikit-learn
+xgboost
+openpyxl
+seaborn
 matplotlib
 python-box==6.0.2
 pyYAML
