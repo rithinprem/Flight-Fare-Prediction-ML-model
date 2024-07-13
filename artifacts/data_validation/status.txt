@@ -1,1 +1,3 @@
-Validation status:True
+Columns Validation status:True
+Airline label_encoding Validation status:True
+Destination label_encoding Validation status:True

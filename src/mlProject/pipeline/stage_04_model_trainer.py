@@ -1,28 +1,26 @@
 from mlProject.config.configuration import ConfigurationManager
-from mlProject.components.data_validation import DataValidation
+from mlProject.components.model_trainer import ModelTrainer
 from mlProject import logger
 
 
 
-STAGE_NAME = "Data Validation stage"
+STAGE_NAME = "Model Trainer stage"
 
-class DataValidationTrainingPipeline:
+class ModelTrainerTrainingPipeline:
     def __init__(self):
         pass
 
     def main(self):
         config = ConfigurationManager()
-        data_validation_config = config.get_data_validation_config()
-        data_validation = DataValidation(config=data_validation_config)
-        validation = data_validation.validate_all_columns()
-        if not all(validation):
-            raise Exception('Validation failed')
+        model_trainer_config = config.get_model_trainer_config()
+        model_trainer_config = ModelTrainer(config=model_trainer_config)
+        model_trainer_config.train()
 
 
 if __name__ == '__main__':
     try:
         logger.info(f">>>>>>>>>>>{STAGE_NAME} started <<<<<<<<<<<<<")
-        obj = DataValidationTrainingPipeline()
+        obj = ModelTrainerTrainingPipeline()
         obj.main()
         logger.info(f">>>>>>>>>> stage {STAGE_NAME} completed <<<<<<<<<<<<<<")
 

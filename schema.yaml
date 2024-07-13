@@ -1,4 +1,5 @@
 COLUMNS:
+  Airline          :  object
   Date_of_Journey  :  object
   Source           :  object
   Destination      :  object

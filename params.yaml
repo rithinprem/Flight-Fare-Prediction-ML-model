@@ -1,1 +1,4 @@
-key: value
+XGBRegressor:
+  learning_rate: 0.1 
+  max_depth: 6 
+  n_estimators: 150

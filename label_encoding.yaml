@@ -1,0 +1,21 @@
+airlines :
+    Air Asia: 0
+    Air India: 1
+    GoAir: 2
+    IndiGo: 3
+    Jet Airways: 4
+    Jet Airways Business: 5
+    Multiple carriers: 6
+    Multiple carriers Premium economy: 7
+    SpiceJet: 8
+    Trujet: 9
+    Vistara: 10
+    Vistara Premium economy: 11
+
+
+destinations: 
+    Banglore: 0
+    Cochin: 1
+    Hyderabad: 2
+    Kolkata: 3
+    New Delhi: 4
