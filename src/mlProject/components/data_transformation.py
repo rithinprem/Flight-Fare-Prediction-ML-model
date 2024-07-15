@@ -4,6 +4,8 @@ from mlProject.config.configuration import DataTransformationConfig
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
 
 
 class DataTransformation:
@@ -84,7 +86,7 @@ class DataTransformation:
 
         destinations = dict(self.config.label_encoders.destinations)
 
-        df_.Destination = df_.Destination.replace('Delhi','New Delhi')
+        df_.Destination = df_.Destination.replace('New Delhi','Delhi')
 
         # Applying Label encoding in destination column
         df_['Destination label'] = df_.Destination.map(destinations)

@@ -1,5 +1,7 @@
 from mlProject.config.configuration import DataValidationConfig
 import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
 
 class DataValidation:
     def __init__(self,config:DataValidationConfig):
@@ -41,14 +43,14 @@ class DataValidation:
         
 
             # Destination data validation for label encoding
-            airlines_list = list(dict(self.config.labels.destinations).keys())
+            destination_schema = list(dict(self.config.labels.destinations).keys())
             destination_list = list(data.Destination.unique())
 
-            if 'Delhi' in destination_list:
-                destination_list.remove('Delhi')            #Delhi and New Delhi is same for now
+            if 'New Delhi' in destination_list:
+                destination_list.remove('New Delhi')            #Delhi and New Delhi is same for now
 
             for i in destination_list:
-                if i not in airlines_list:
+                if i not in destination_schema:
                     validation_status_3 = False
                     with open(self.config.STATUS_FILE,'a') as f:
                         f.write(f"\nDestination label_encoding Validation status:{validation_status_3}")

@@ -1,11 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flight Fare Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('..\\static\\images\\background_image.jpg');
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .info {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .price {
+            font-size: 24px;
+            color: #096f8a;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .details {
+            font-size: 16px;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0e1f27;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #3fc9db;
+        }
+    </style>
 </head>
 <body>
-    Flight fare prediction : {{prediction}}
+    <div class="container">
+        <h1>Flight Fare Prediction</h1>
+        <div class="info">
+            <span id="source">Source: {{ source }}</span>
+        </div>
+        <div class="info">
+            <span id="destination">Destination: {{ destination }}</span>
+        </div>
+        <div class="price">
+            Predicted Fare: ₹{{ prediction }}
+        </div>
+        <div class="details">
+            Date: {{ date }}
+        </div>
+        <a href="/" class="btn">Back to Home</a>
+    </div>
 </body>
 </html>

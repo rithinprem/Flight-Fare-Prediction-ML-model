@@ -6,6 +6,8 @@ from mlProject.utils.common import save_json
 from pathlib import Path
 import numpy as np
 import joblib
+import warnings
+warnings.filterwarnings('ignore')
 
 
 class ModelEvaluation:

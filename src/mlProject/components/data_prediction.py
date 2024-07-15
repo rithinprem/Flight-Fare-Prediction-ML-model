@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import joblib
+import warnings
+warnings.filterwarnings('ignore')
 from mlProject.config.configuration import DataPredictionConfig
 
 
@@ -80,7 +82,7 @@ class DataPrediction:
 
         destinations = dict(self.config.label_encoders.destinations)
 
-        df_.Destination = df_.Destination.replace('Delhi','New Delhi')
+        # df_.Destination = df_.Destination.replace('Delhi','New Delhi')
 
         # Applying Label encoding in destination column
         df_['Destination label'] = df_.Destination.map(destinations)

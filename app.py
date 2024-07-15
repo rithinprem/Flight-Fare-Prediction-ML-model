@@ -1,6 +1,5 @@
 from flask import Flask,render_template,request
 import os
-import numpy as np
 import pandas as pd
 from datetime import datetime
 from mlProject.pipeline.stage_06_data_prediction import DataPredictionPipeline
@@ -24,7 +23,6 @@ def training():
 def index():
     if request.method == 'POST':
         try:
-            print("Inside predict")
             airline = str(request.form.get('airline'))
             date_of_journey = request.form.get('date_of_journey')
             source = str(request.form.get('source'))
@@ -57,15 +55,6 @@ def index():
                     'Price':{0:'NA'}
                     }
             
-            print("airline:"f'{airline}')
-            print("date_of_journey:"f'{date_of_journey}')
-            print("source:"f'{source}')
-            print("destination:"f'{destination}')
-            print("dep_time:"f'{dep_time}')
-            print("arrival_time:"f'{arrival_time}')
-            print("duration:"f'{duration}')
-            print("total_stops:"f'{total_stops}')
-            print("additional_info:"f'{additional_info}')
            
             df_ = pd.DataFrame(data)
             obj = DataPredictionPipeline()
@@ -73,7 +62,7 @@ def index():
 
             print(predict)
 
-            return render_template('results.html', prediction = predict)
+            return render_template('results.html', prediction = predict,source=source,destination=destination,date=date_of_journey)
 
         except Exception as e:
             print('The Exception message is: ',e)
@@ -81,7 +70,6 @@ def index():
 
     else:
         return render_template('index.html')
-
 
 
 

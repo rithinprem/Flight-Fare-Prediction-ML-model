@@ -3,6 +3,8 @@ import os
 from mlProject import logger
 from xgboost import XGBRegressor
 from mlProject.config.configuration import ModelTrainerConfig
+import warnings
+warnings.filterwarnings('ignore')
 
 import joblib
 

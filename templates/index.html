@@ -9,6 +9,17 @@
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Lobster&display=swap"
         rel="stylesheet">
+
+    <script>
+        function validate_source_destination() {
+            if (document.getElementById('source').value === document.getElementById('destination').value) {
+                alert("Source and Destination can't be same")
+                return false;
+            }
+            else { return true };
+        }
+
+    </script>
 </head>
 
 <body>
@@ -20,7 +31,7 @@
 
     <div class="container">
         <div class="form-wrapper">
-            <form action="/predict" method="post">
+            <form action="/predict" method="post" onsubmit="return validate_source_destination()">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="airline">Airline:</label>
@@ -68,7 +79,7 @@
                             <option value="Cochin">Cochin</option>
                             <option value="Hyderabad">Hyderabad</option>
                             <option value="Kolkata">Kolkata</option>
-                            <option value="New Delhi">New Delhi</option>
+                            <option value="Delhi">Delhi</option>
 
 
                         </select>
