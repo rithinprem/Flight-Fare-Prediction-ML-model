@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Fare Prediction App</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Lobster&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Flight Fare Prediction App</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-wrapper">
+            <form action="/predict" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="airline">Airline:</label>
+                        <select name="airline" id="airline" required>
+                            <option value="" disabled selected>Select Airline</option>
+                            <option value="Air Asia">Air Asia</option>
+                            <option value="Air India">Air India</option>
+                            <option value="GoAir">GoAir</option>
+                            <option value="IndiGo">IndiGo</option>
+                            <option value="Jet Airways">Jet Airways</option>
+                            <option value="Jet Airways Business">Jet Airways Business</option>
+                            <option value="Multiple carriers">Multiple carriers</option>
+                            <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                            <option value="SpiceJet">SpiceJet</option>
+                            <option value="Trujet">Trujet</option>
+                            <option value="Vistara">Vistara</option>
+                            <option value="Vistara Premium economy">Vistara Premium economy</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date_of_journey">Date of Journey:</label>
+                        <input type="date" name="date_of_journey" id="date_of_journey" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="source">Source:</label>
+                        <select name="source" id="source" required>
+                            <option value="" disabled selected>Select Source City</option>
+                            <option value="Banglore">Banglore</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Mumbai">Mumbai</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Destination:</label>
+                        <select name="destination" id="destination" required>
+                            <option value="" disabled selected>Select Destination City</option>
+                            <option value="Banglore">Banglore</option>
+                            <option value="Cochin">Cochin</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="New Delhi">New Delhi</option>
+
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dep_time">Departure Time:</label>
+                        <input type="time" name="dep_time" id="dep_time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="arrival_time">Arrival Time:</label>
+                        <input type="time" name="arrival_time" id="arrival_time" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="total_stops">Total Stops:</label>
+                        <select name="total_stops" id="total_stops" required>
+                            <option value="" disabled selected>Select Total Stops</option>
+                            <option value="non-stop">non-stop</option>
+                            <option value="1 stop">1 stop</option>
+                            <option value="2 stops">2 stops</option>
+                            <option value="3 stops">3 stops</option>
+                            <option value="4 stops">4 stops</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional_info">Additional Info:</label>
+                        <select name="additional_info" id="additional_info">
+                            <option value="" disabled selected>Select additional info</option>
+                            <option value="No Info">No Info</option>
+                            <option value="In-flight meal not included">In-flight meal not included</option>
+                            <option value="No check-in baggage included">No check-in baggage included</option>
+                            <option value="1 Short layover">1 Short layover</option>
+                            <option value="1 Long layover">1 Long layover</option>
+                            <option value="Change airports">Change airports</option>
+                            <option value="Business class">Business class</option>
+                            <option value="Red-eye flight">Red-eye flight</option>
+                            <option value="2 Long layover">2 Long layover</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <a href="https://www.linkedin.com/in/rithin-prem-1a4983182/">
+                        <span class="fa-stack fa-lg">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="https://github.com/rithinprem/Flight-Fare-Prediction-ML-model">
+                        <span class="fa-stack fa-lg">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <div class="small text-center text-muted fst-italic"></div>
+                    <div class="small text-center text-muted fst-italic"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

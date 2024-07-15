@@ -4,7 +4,8 @@ from mlProject.entity.config_entity import (DataIngestionConfig,
                                            DataValidationConfig,
                                            DataTransformationConfig,
                                            ModelTrainerConfig,
-                                           ModelEvaluationConfig)
+                                           ModelEvaluationConfig,
+                                           DataPredictionConfig)
 
 
 class ConfigurationManager:
@@ -110,3 +111,19 @@ class ConfigurationManager:
                 )
 
                 return model_evalution_config
+    
+
+
+    def get_data_prediction_config(self) -> DataPredictionConfig:
+        config = self.config.data_prediction
+        label_encoders = self.labels
+
+
+        data_prediction_config = DataPredictionConfig(
+             root_dir= config.root_dir,
+             model_path=config.model_path,
+             data_path=config.data_path,
+             label_encoders = label_encoders
+        )
+
+        return data_prediction_config

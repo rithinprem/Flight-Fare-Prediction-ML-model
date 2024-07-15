@@ -44,3 +44,11 @@ class ModelEvaluationConfig:
     all_params : dict
     metric_file_name: Path
     target_column : str
+
+
+@dataclass(frozen=True)
+class DataPredictionConfig:
+    root_dir: Path
+    model_path:Path
+    data_path:Path
+    label_encoders:dict

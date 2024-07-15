@@ -6,7 +6,7 @@ with open("README.md","r",encoding="utf-8") as f:
 
 __version__ = "0.0.0.0"
 
-REPO_NAME = "Flight-Price-Prediction-ML-model"
+REPO_NAME = "Flight-Fare-Prediction-ML-model"
 AUTHOR_USER_NAME = "rithinprem"
 SRC_REPO = 'mlProject'
 AUTHOR_EMAIL = 'rithinengineeringmy@gmail.com'
